@@ -141,9 +141,6 @@ struct Stats {
 
     // Open the output file
     std::ofstream orderVariablesFile(filePath);
-    
-    // std::cout << "======================== " << std::endl;
-    // std::cout << "Creating file of orderVariables: " << filePath << std::endl;
 
     if (orderVariablesFile){
       if (orderVariablesFile.fail()) {
@@ -177,11 +174,6 @@ struct Stats {
 
     // generate the output file
     std::ofstream firstSolFile("first_solution/" + instanceName + ".txt");
-
-    // std::cout << "======================== " << std::endl;
-    // std::cout << "Creating file of first solution" << std::endl;
-    // std::cout << "Formula name: " << instanceName << std::endl;
-    // std::cout << "Time taken: " << getTime() << "s" << std::endl;
 
     if (firstSolFile){
       if (firstSolFile.fail()) {
@@ -224,8 +216,6 @@ struct Stats {
 
     int backboneCounter = 0;
 
-    // std::cout << "======================== " << std::endl;
-    // std::cout << "c Creating file of backbones" << std::endl;
     std::cout << "c Path backbone file: " << "backbones/" + formulaName + ".sol" << std::endl;
     std::cout << "c Formula name: " << formulaName << std::endl;
     std::cout << "c Time taken to extract the backbone: " << getTimeBackbone() << "s" << std::endl;
@@ -285,8 +275,6 @@ struct Stats {
     int noBackboneCounter = 0;
     int unknownCounter = 0;
 
-    // std::cout << "======================== " << std::endl;
-    // std::cout << "c Creating incomplete file of backbones" << std::endl;
     std::cout << "c Path incomplete backbone file: " << "backbones/" + formulaName + "_incomplete.sol" << std::endl;
     std::cout << "c Formula name: " << formulaName << std::endl;
     std::cout << "c Time taken to extract the backbone: " << getTimeBackbone() << "s" << std::endl;
@@ -339,9 +327,6 @@ struct Stats {
 
     // generate the output file
     std::ofstream metricsFile("metrics/" + instanceName + ".csv");
-
-    // std::cout << "======================== " << std::endl;
-    // std::cout << "Creating file of metrics" << std::endl;
 
     if (metricsFile){
       if (metricsFile.fail()) {

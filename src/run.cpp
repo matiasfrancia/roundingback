@@ -231,53 +231,6 @@ void run::run(CeArb objective) {
         optim.optimize();
         bestUpperBound = optim.getUpperBound();
       }
-
-      // if (rs::options.calculateBackbones) {
-      //   std::cout << "c Calculating backbones\n";
-      //   std::cout << "Best objective value: " << bestUpperBound << std::endl;
-
-      //   // reinitialize solver for backbone calculation
-      //   rs::run::solver.reset();                              // call reset
-      //   rs::run::solver.~Solver();                    // call destructor
-      //   new (&rs::run::solver) Solver(/* optional args */);  // placement new
-
-      //   rs::run::solver.init();
-      //   rs::CeArb objective = rs::run::solver.cePools.takeArb();
-      //   bool infeasible_or_error = false;
-
-      //   // read the formula again
-      //   if (!rs::options.formulaName.empty()) {
-      //     std::ifstream fin(rs::options.formulaName, std::ifstream::in);
-      //     boost::iostreams::filtering_istream in;
-
-      // #ifdef IOSTREAMS_WITH_ZLIB
-      //     if (boost::algorithm::ends_with(rs::options.formulaName, ".gz"))
-      //       in.push(boost::iostreams::gzip_decompressor());
-      // #endif
-      // #ifdef IOSTREAMS_WITH_BZIP2
-      //     if (boost::algorithm::ends_with(rs::options.formulaName, ".bz2"))
-      //       in.push(boost::iostreams::bzip2_decompressor());
-      // #endif
-      //     in.push(fin);
-      //     infeasible_or_error = rs::parsing::file_read(in, rs::run::solver, objective);
-      //   }
-
-      //   rs::run::solver.initLP(objective);
-
-      //   std::cout << "c Adding upper bound constraint\n";
-
-      //   // add upper bound constraint
-      //   CeArb upperBound = rs::run::solver.cePools.takeArb();
-      //   objective->copyTo(upperBound);
-      //   upperBound->invert();
-      //   upperBound->addRhs(-bestUpperBound);
-      //   std::pair<ID, ID> res = rs::run::solver.addConstraint(upperBound, Origin::UPPERBOUND);
-      //   assert(res.second != ID_Unsat);
-
-      //   std::cout << "c Starting backbone calculation\n";
-
-      //   decide();
-      // }
     } else {
       if (options.alreadySolved) {
         std::cout << "Warning: alreadySolved is set but no objective function is given. " <<

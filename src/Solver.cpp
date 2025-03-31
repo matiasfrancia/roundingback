@@ -89,11 +89,6 @@ void Solver::initLP([[maybe_unused]] const CeArb objective) {
 #endif  // WITHSOPLEX
 }
 
-void Solver::reset() {
-  ca.~ConstraintAllocator();
-  new (&ca) ConstraintAllocator();
-}
-
 // ---------------------------------------------------------------------
 // VSIDS
 
@@ -959,7 +954,6 @@ void Solver::calculateBackbones() {
     }
   }
 
-  // stats.backboneMetrics.push_back({orderingTime, solSize, nUnits, 0, 0.0, 0.0});
   stats.backboneMetrics[0].time = orderingTime;
   stats.backboneMetrics[0].backbones = nUnits;
   stats.backboneMetrics[0].noBackbones = solSize-1;
@@ -1051,7 +1045,7 @@ void Solver::calculateBackbones() {
 
     if(reply == SolveState::SAT) {
       
-      // TODO Matias: if it's SAT store in the metrics vector a 1 
+      // if it's SAT store in the metrics vector a 1 
       stats.backboneMetrics[stats.NITBACKBONES].sat = 1;
 
       // if there's only one literal in the chunk
@@ -1110,7 +1104,6 @@ void Solver::calculateBackbones() {
   // print the metrics to a file
   double printMetricsTimeStart = rs::aux::cpuTime();
   stats.printMetricsBackbones(options.formulaName);
-  // std::cout << "Time metrics print: " << rs::aux::cpuTime() - printMetricsTimeStart << "s" << std::endl;
 
   // print the backbone set to a file
   stats.printBackbones(state, firstSol, options.formulaName);
@@ -1183,7 +1176,7 @@ SolveAnswer Solver::solve() {
         //        return {SolveState::RESTARTED, {}, lastSol}; // avoid this overhead for now
       }
       if (stats.NCONFL >= (stats.NCLEANUP + 1) * nconfl_to_reduce) {
-        // if (options.verbosity.get() > 0) puts("c INPROCESSING");
+        if (options.verbosity.get() > 0) puts("c INPROCESSING");
         ++stats.NCLEANUP;
         reduceDB();
         while (stats.NCONFL >= stats.NCLEANUP * nconfl_to_reduce) nconfl_to_reduce += options.dbCleanInc.get();
