@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -euo pipefail
-ROUNDINGSAT_EXEC="./build_debug/roundingsat"
+ROUNDINGSAT_EXEC="./build/roundingsat"
 DEFAULT_TIMEOUT=3600  # 1 hour
 
 print_help() {
