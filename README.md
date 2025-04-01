@@ -11,6 +11,6 @@ Once it is built, you need to run:
 
     ./extract_backbone.sh <pbo_instance_path>
 
-You can also pass a timeout and/or an optimal value for an instance if you already know it:
+You can also pass a timeout and/or an optimal value for an optimization instance if you already know it:
 
     ./extract_backbone.sh <pbo_instance_path> --opt <optimum_value> --timeout <time_in_seconds>
