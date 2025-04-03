@@ -1,6 +1,6 @@
 # RoundingBack
 
-**RoundingBack** is a native backbone extractor for Pseudo-Boolean Optimization (PBO) instances, built upon the internals of [RoundingSat]([https://github.com/roundingsat/roundingsat](https://gitlab.com/MIAOresearch/software/roundingsat/)).
+**RoundingBack** is a native backbone extractor for Pseudo-Boolean Optimization (PBO) instances, built upon the internals of [RoundingSat](https://gitlab.com/MIAOresearch/software/roundingsat/).
 It reuses the solver's native data structures and algorithms to perform backbone extraction at low level.
 
 This tool was developed for the experiments presented in a research paper submitted to the **SAT 2025 Conference**.
