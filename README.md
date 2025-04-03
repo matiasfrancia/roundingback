@@ -25,6 +25,17 @@ cmake -DCMAKE_BUILD_TYPE=Debug ..
 make
 ```
 
+RoundingBack supports optional integration with the SoPlex LP solver via RoundingSat.
+To enable it, download soplex and build with:
+
+```bash
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release -Dsoplex=ON ..
+make
+```
+
+For full instructions on how to build with Soplex, refer to the [RoundingSat](https://gitlab.com/MIAOresearch/software/roundingsat/) repository.
+
 ---
 
 ## Usage
