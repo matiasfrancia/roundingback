@@ -70,15 +70,7 @@ If no optimum is passed, the script will attempt to detect whether the instance 
 
 ## Citation
 
-RoundingBack builds upon the core components of **RoundingSat**, a state-of-the-art solver for 0-1 Integer Linear Programs. If you use RoundingBack or RoundingSat in your work, please consider citing the following papers:
-
-- **[EN18]** J. Elffers, J. Nordström. *Divide and Conquer: Towards Faster Pseudo-Boolean Solving*. In Proceedings of IJCAI 2018. 
-
-- **[DGN20]** J. Devriendt, A. Gleixner, J. Nordström. *Learn to Relax: Integrating 0-1 Integer Linear Programming with Pseudo-Boolean Conflict-Driven Search*. In Proceedings of CPAIOR 2020 / Constraints Journal.  
-
-- **[D20]** J. Devriendt. *Watched Propagation for 0-1 Integer Linear Constraints*. In Proceedings of CP 2020.  
-
-- **[DGDNS21]** J. Devriendt, S. Gocht, E. Demirović, J. Nordström, P. J. Stuckey. *Cutting to the Core of Pseudo-Boolean Optimization: Combining Core-Guided Search with Cutting Planes Reasoning*. In Proceedings of AAAI 2021.  
+RoundingBack builds upon the core components of **RoundingSat**, a state-of-the-art solver for 0-1 Integer Linear Programs. If you use RoundingBack or RoundingSat in your work, please consider citing RoundingSat and RoundingBack.
 
 ---
 
