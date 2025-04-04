@@ -70,7 +70,7 @@ If no optimum is passed, the script will attempt to detect whether the instance 
 
 ## Citation
 
-RoundingBack builds upon the core components of **RoundingSat**, a state-of-the-art solver for 0-1 Integer Linear Programs. If you use RoundingBack or RoundingSat in your work, please consider citing RoundingSat and RoundingBack.
+RoundingBack builds upon the core components of **RoundingSat**, a state-of-the-art solver for 0-1 Integer Linear Programs. If you use RoundingBack or RoundingSat in your work, please consider citing them.
 
 ---
 
